@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙 | About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙<span>࿐ˊˎ</span></a>
+
+    <nav class="navbar">
+        <a href="index.html">𝐇𝐨𝐦𝐞</a>
+        <a href="about.html">𝐀𝐛𝐨𝐮𝐭</a>
+        <a href="products.html">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a>
+        <a href="contact.html">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a>
+    </nav>
+
+    <div class="icons">
+        <a href="javascript:void(0)" class="fas fa-heart" id="like-btn" onclick="toggleLike()"></a>
+        <a href="javascript:void(0)" class="fas fa-shopping-bag" id="cart-icon" onclick="viewCart()">
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="about-bg">
+        <div class="page-wrapper">
+            <h1 class="heading">Our <span>Philosophy</span></h1>
+
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙.jfif" alt="About aeflorist">
+                    <div class="experience-badge">
+                        <span>5+</span>
+                        <p>Years of Love</p>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>We Breathe Life Into Flowers</h3>
+                    <p>Di 𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙, kami percaya bunga adalah cara terbaik menyampaikan perasaan. Setiap batang bunga kami kurasi dengan standar tinggi.</p>
+
+                    <div class="feature-box">
+                        <div class="f-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Organic Freshness</h4>
+                                <p>Langsung dari kebun terbaik.</p>
+                            </div>
+                        </div>
+                        <div class="f-item">
+                            <i class="fas fa-truck-fast"></i>
+                            <div>
+                                <h4>Express Shipping</h4>
+                                <p>Sampai di hari yang sama.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="heading">Final <span>Checkout</span></h2>
+        
+        <div class="checkout-grid">
+            <div id="orderSummary"></div>
+
+            <form id="checkoutDetailsForm" onsubmit="processPayment(event)">
+                <h3 class="checkout-details-title" style="font-size: 1.6rem; margin: 1.5rem 0;">Informasi Pengiriman</h3>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nama Lengkap:</label>
+                    <input type="text" id="custName" placeholder="Masukkan nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Alamat Lengkap:</label>
+                    <input type="text" id="custAddress" placeholder="Masukkan alamat" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nomor HP:</label>
+                    <input type="tel" id="custPhone" placeholder="Contoh: 0812..." required>
+                </div>
+                
+                <div class="payment-methods">
+                    <p>Metode Pembayaran:</p>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="Transfer Bank" checked>
+                        <div class="option-content"><span>Transfer Bank (Mandiri)</span></div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="E-Wallet">
+                        <div class="option-content"><span>E-Wallet (Dana/Gopay)</span></div>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 2rem;">Bayar Sekarang</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- RECEIPT -->
+<div id="receiptPage" class="receipt-page">
+    <div class="receipt-box">
+        <h2 class="heading">Order <span>Success</span></h2>
+        <div id="receiptContent"></div>
+        <a href="products.html" class="btn" style="margin-top:2rem">Kembali Berbelanja</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙࿐ˊˎ | Premium Bouduet.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

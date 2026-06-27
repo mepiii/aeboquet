@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙 | Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙<span>࿐ˊˎ</span></a>
+
+    <nav class="navbar">
+        <a href="index.html">𝐇𝐨𝐦𝐞</a>
+        <a href="about.html">𝐀𝐛𝐨𝐮𝐭</a>
+        <a href="products.html">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a>
+        <a href="contact.html">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a>
+    </nav>
+
+    <div class="icons">
+        <a href="javascript:void(0)" class="fas fa-heart" id="like-btn" onclick="toggleLike()"></a>
+        <a href="javascript:void(0)" class="fas fa-shopping-bag" id="cart-icon" onclick="viewCart()">
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="contact-bg">
+    <div class="page-wrapper">
+        <h1 class="heading">Contact <span>Us</span></h1>
+
+        <div class="contact-container">
+            <!-- KIRI: INFO TOKO -->
+            <div class="contact-info">
+                <h3>Info Toko</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Kolonel Wahid Udin No. 45, Kayuara<br>Kec. Sekayu, Kab. Musi Banyuasin<br>Sumatera Selatan 30711</p>
+                        <a href="https://maps.app.goo.gl/26QYNjzFfe7diZvW9?g_st=ac" target="_blank">Lihat di Google Maps →</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/6282179965441" target="_blank">+62 821-7996-5441</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:aprildaazrina@gmail.com">aprildaazrina@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Sabtu: 09.00 - 18.00 WIB<br>Minggu: By Appointment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KANAN: FORM WA -->
+            <form class="contact-form" id="contact-form">
+                <h3>Chat Kami via WhatsApp</h3>
+                <p>Isi form di bawah, nanti otomatis kebuka WhatsApp dengan pesan sudah terisi</p>
+                <div class="input-row">
+                    <input type="text" id="c_name" placeholder="Nama Lengkap" required>
+                    <input type="tel" id="c_phone" placeholder="No. WhatsApp Kamu" required>
+                </div>
+                <select id="c_subject" required>
+                    <option value="" disabled selected>Pilih Keperluan</option>
+                    <option value="Tanya Produk">Tanya Produk</option>
+                    <option value="Custom Bouquet">Custom Bouquet</option>
+                    <option value="Cek Ongkir">Cek Ongkir</option>
+                    <option value="Konfirmasi Pesanan">Konfirmasi Pesanan</option>
+                    <option value="Komplain / Lainnya">Komplain / Lainnya</option>
+                </select>
+                <textarea id="c_msg" placeholder="Tulis pesan kamu di sini..." rows="5" required></textarea>
+                <button type="submit" class="btn">
+                    <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+    </div>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="heading">Final <span>Checkout</span></h2>
+        
+        <div class="checkout-grid">
+            <div id="orderSummary"></div>
+
+            <form id="checkoutDetailsForm" onsubmit="processPayment(event)">
+                <h3 class="checkout-details-title" style="font-size: 1.6rem; margin: 1.5rem 0;">Informasi Pengiriman</h3>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nama Lengkap:</label>
+                    <input type="text" id="custName" placeholder="Masukkan nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Alamat Lengkap:</label>
+                    <input type="text" id="custAddress" placeholder="Masukkan alamat" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nomor HP:</label>
+                    <input type="tel" id="custPhone" placeholder="Contoh: 0812..." required>
+                </div>
+                
+                <div class="payment-methods">
+                    <p>Metode Pembayaran:</p>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="Transfer Bank" checked>
+                        <div class="option-content"><span>Transfer Bank (Mandiri)</span></div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="E-Wallet">
+                        <div class="option-content"><span>E-Wallet (Dana/Gopay)</span></div>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 2rem;">Bayar Sekarang</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- RECEIPT -->
+<div id="receiptPage" class="receipt-page">
+    <div class="receipt-box">
+        <h2 class="heading">Order <span>Success</span></h2>
+        <div id="receiptContent"></div>
+        <a href="products.html" class="btn" style="margin-top:2rem">Kembali Berbelanja</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙࿐ˊˎ | Premium Bouduet.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

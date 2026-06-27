@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙 | Premium Bouquet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙<span> ࿐ˊˎ</span></a>
+
+    <nav class="navbar">
+        <a href="index.html">𝐇𝐨𝐦𝐞</a>
+        <a href="about.html">𝐀𝐛𝐨𝐮𝐭</a>
+        <a href="products.html">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a>
+        <a href="contact.html">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a>
+    </nav>
+
+    <div class="icons">
+        <a href="javascript:void(0)" class="fas fa-heart" id="like-btn" onclick="toggleLike()"></a>
+        <a href="javascript:void(0)" class="fas fa-shopping-bag" id="cart-icon" onclick="viewCart()">
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <section class="home" id="home">
+        <div class="content">
+            <h3 class="main-title">𝕱𝐫𝐞𝐬𝐡 𝕱𝐥𝐨𝐰𝐞𝐫</h3>
+            <p>𝐎𝐮𝐫 𝐟𝐥𝐨𝐰𝐞𝐫 𝐬𝐡𝐨𝐩 𝐢𝐬 𝐚 𝐩𝐥𝐚𝐜𝐞 𝐰𝐡𝐞𝐫𝐞 𝐧𝐚𝐭𝐮𝐫𝐞 𝐦𝐞𝐞𝐭𝐬 𝐚𝐫𝐭𝐢𝐬𝐭𝐫𝐲, 𝐟𝐞𝐚𝐭𝐮𝐫𝐢𝐧𝐠 𝐫𝐨𝐰𝐬 𝐨𝐟 𝐬𝐮𝐧-𝐝𝐫𝐞𝐧𝐜𝐡𝐞𝐝 𝐛𝐥𝐨𝐨𝐦𝐬 𝐭𝐡𝐚𝐭 𝐨𝐮𝐫 𝐬𝐤𝐢𝐥𝐥𝐞𝐝 𝐟𝐥𝐨𝐫𝐢𝐬𝐭𝐬 𝐦𝐞𝐭𝐢𝐜𝐮𝐥𝐨𝐮𝐬𝐥𝐲 𝐡𝐚𝐧𝐝-𝐩𝐢𝐜𝐤 𝐚𝐧𝐝 𝐚𝐫𝐫𝐚𝐧𝐠𝐞 𝐢𝐧𝐭𝐨 𝐛𝐫𝐞𝐚𝐭𝐡𝐭𝐚𝐤𝐢𝐧𝐠 𝐛𝐨𝐮𝐪𝐮𝐞𝐭𝐬 𝐭𝐚𝐢𝐥𝐨𝐫𝐞𝐝 𝐟𝐨𝐫 𝐞𝐯𝐞𝐫𝐲 𝐮𝐧𝐢𝐪𝐮𝐞 𝐞𝐦𝐨𝐭𝐢𝐨𝐧.</p>
+            <div class="action-btns">
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="heading">Final <span>Checkout</span></h2>
+        
+        <div class="checkout-grid">
+            <div id="orderSummary"></div>
+
+            <form id="checkoutDetailsForm" onsubmit="processPayment(event)">
+                <h3 class="checkout-details-title" style="font-size: 1.6rem; margin: 1.5rem 0;">Informasi Pengiriman</h3>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nama Lengkap:</label>
+                    <input type="text" id="custName" placeholder="Masukkan nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Alamat Lengkap:</label>
+                    <input type="text" id="custAddress" placeholder="Masukkan alamat" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nomor HP:</label>
+                    <input type="tel" id="custPhone" placeholder="Contoh: 0812..." required>
+                </div>
+                
+                <div class="payment-methods">
+                    <p>Metode Pembayaran:</p>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="Transfer Bank" checked>
+                        <div class="option-content"><span>Transfer Bank (Mandiri)</span></div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="E-Wallet">
+                        <div class="option-content"><span>E-Wallet (Dana/Gopay)</span></div>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 2rem;">Bayar Sekarang</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- RECEIPT (shown after order) -->
+<div id="receiptPage" class="receipt-page">
+    <div class="receipt-box">
+        <h2 class="heading">Order <span>Success</span></h2>
+        <div id="receiptContent"></div>
+        <a href="products.html" class="btn" style="margin-top:2rem">Kembali Berbelanja</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙࿐ˊˎ | Premium Bouduet.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

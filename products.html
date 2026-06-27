@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙 | Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙<span>࿐ˊˎ</span></a>
+
+  <nav class="navbar">
+        <a href="index.html">𝐇𝐨𝐦𝐞</a>
+        <a href="about.html">𝐀𝐛𝐨𝐮𝐭</a>
+        <a href="products.html">𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐬</a>
+        <a href="contact.html">𝐂𝐨𝐧𝐭𝐚𝐜𝐭</a>
+    </nav>
+
+    <div class="icons">
+        <a href="javascript:void(0)" class="fas fa-heart" id="like-btn" onclick="toggleLike()"></a>
+        <a href="javascript:void(0)" class="fas fa-shopping-bag" id="cart-icon" onclick="viewCart()">
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+    <div class="products-bg">
+        <div class="page-wrapper">
+            <h1 class="heading">Latest <span>Collection</span></h1>
+
+            <div class="product-grid">
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet1-1.jfif" id="img1" onclick="swapImg('img1','bouquet1-1.jfif','bouquet1-2.jfif')" alt="Lilac Reverie">
+                        <div class="tag">Popular</div>
+                    </div>
+                    <div class="p-info">
+                        <h3>Lilac Reverie</h3>
+                        <p class="p-desc">Perpaduan bunga lilac dan mawar putih yang memberikan kesan tenang dan elegan.</p>
+                        <div class="price">Rp 350.000</div>
+                        <button class="add-btn" onclick="addToCart('Lilac Reverie', 350000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet2-1.jfif" id="img2" onclick="swapImg('img2','bouquet2-1.jfif','bouquet2-2.jfif')" alt="Rosy Posy Dream">
+                    </div>
+                    <div class="p-info">
+                        <h3>Rosy Posy Dream</h3>
+                        <p class="p-desc">Buket mawar merah muda yang manis, cocok untuk hadiah ulang tahun atau kelulusan.</p>
+                        <div class="price">Rp 125.000</div>
+                        <button class="add-btn" onclick="addToCart('Rosy Posy Dream', 125000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet3-1.jfif" id="img3" onclick="swapImg('img3','bouquet3-1.jfif','bouquet3-2.jfif')" alt="Sienna Whisper">
+                    </div>
+                    <div class="p-info">
+                        <h3>Sienna Whisper</h3>
+                        <p class="p-desc">Nuansa warna earthy dan hangat dengan sentuhan bunga kering yang tahan lama.</p>
+                        <div class="price">Rp 225.000</div>
+                        <button class="add-btn" onclick="addToCart('Sienna Whisper', 225000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet4-1.jfif" id="img4" onclick="swapImg('img4','bouquet4-1.jfif','bouquet4-2.jfif')" alt="Magenta Bloom">
+                    </div>
+                    <div class="p-info">
+                        <h3>Magenta Bloom</h3>
+                        <p class="p-desc">Warna magenta yang cerah dan berani untuk menyatakan perasaan yang kuat.</p>
+                        <div class="price">Rp 325.000</div>
+                        <button class="add-btn" onclick="addToCart('Magenta Bloom', 325000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet5-1.jfif" id="img5" onclick="swapImg('img5','bouquet5-1.jfif','bouquet5-2.jfif')" alt="Graceful Lily">
+                    </div>
+                    <div class="p-info">
+                        <h3>Graceful Lily</h3>
+                        <p class="p-desc">Kesucian bunga Lily putih yang melambangkan ketulusan dan kemurnian hati.</p>
+                        <div class="price">Rp 175.000</div>
+                        <button class="add-btn" onclick="addToCart('Graceful Lily', 175000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet6-1.jfif" id="img6" onclick="swapImg('img6','bouquet6-1.jfif','bouquet6-2.jfif')" alt="Majestic Mauve">
+                    </div>
+                    <div class="p-info">
+                        <h3>Majestic Mauve</h3>
+                        <p class="p-desc">Kombinasi eksklusif warna ungu tua yang mewah untuk momen spesial Anda.</p>
+                        <div class="price">Rp 355.000</div>
+                        <button class="add-btn" onclick="addToCart('Majestic Mauve', 355000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet7-1.jfif" id="img7" onclick="swapImg('img7','bouquet7-1.jfif','bouquet7-2.jfif')" alt="Amethyst Garden">
+                    </div>
+                    <div class="p-info">
+                        <h3>Amethyst Garden</h3>
+                        <p class="p-desc">Bagaikan taman bunga di pagi hari dengan pilihan bunga lokal segar pilihan.</p>
+                        <div class="price">Rp 245.000</div>
+                        <button class="add-btn" onclick="addToCart('Amethyst Garden', 245000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-img">
+                        <img src="bouquet8-1.jfif" id="img8" onclick="swapImg('img8','bouquet8-1.jfif','bouquet8-2.jfif')" alt="Golden Solace">
+                    </div>
+                    <div class="p-info">
+                        <h3>Golden Solace</h3>
+                        <p class="p-desc">Sentuhan warna kuning matahari yang mencerahkan hari siapa pun yang menerimanya.</p>
+                        <div class="price">Rp 150.000</div>
+                        <button class="add-btn" onclick="addToCart('Golden Solace', 150000)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="heading">Final <span>Checkout</span></h2>
+        
+        <div class="checkout-grid">
+            <div id="orderSummary"></div>
+
+            <form id="checkoutDetailsForm" onsubmit="processPayment(event)">
+                <h3 class="checkout-details-title" style="font-size: 1.6rem; margin: 1.5rem 0;">Informasi Pengiriman</h3>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nama Lengkap:</label>
+                    <input type="text" id="custName" placeholder="Masukkan nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Alamat Lengkap:</label>
+                    <input type="text" id="custAddress" placeholder="Masukkan alamat" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 1.2rem;">Nomor HP:</label>
+                    <input type="tel" id="custPhone" placeholder="Contoh: 0812..." required>
+                </div>
+                
+                <div class="payment-methods">
+                    <p>Metode Pembayaran:</p>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="Transfer Bank" checked>
+                        <div class="option-content"><span>Transfer Bank (Mandiri)</span></div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay" value="E-Wallet">
+                        <div class="option-content"><span>E-Wallet (Dana/Gopay)</span></div>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 2rem;">Bayar Sekarang</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- RECEIPT -->
+<div id="receiptPage" class="receipt-page">
+    <div class="receipt-box">
+        <h2 class="heading">Order <span>Success</span></h2>
+        <div id="receiptContent"></div>
+        <a href="products.html" class="btn" style="margin-top:2rem">Kembali Berbelanja</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 𝖆𝖊𝖇𝖔𝖚𝖖𝖚𝖊𝖙࿐ˊˎ | Premium Bouduet.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
